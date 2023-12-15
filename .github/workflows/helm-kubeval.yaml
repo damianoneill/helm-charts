@@ -1,0 +1,13 @@
+on: push
+name: Validate Helm Output
+jobs:
+  kubeconform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Helm Kubeconform
+        uses: nlamirault/helm-kubeconform-action@v0.2.0
+        with:
+          charts: ./charts
