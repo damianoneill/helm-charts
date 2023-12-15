@@ -1,5 +1,18 @@
 apiVersion: v1
 entries:
+  base:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-12-15T18:59:11.174598214Z"
+    description: A Helm chart for Kubernetes
+    digest: af79aa62c790128d19a8ed7c612c61217b42641b075efd069368b2cc4c588b16
+    maintainers:
+    - name: damianoneill
+    name: base
+    type: application
+    urls:
+    - https://github.com/damianoneill/helm-charts/releases/download/base-0.1.0/base-0.1.0.tgz
+    version: 0.1.0
   helloworld:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +24,4 @@ entries:
     urls:
     - https://github.com/damianoneill/helm-charts/releases/download/helloworld-0.1.0/helloworld-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-15T16:28:16.549497698Z"
+generated: "2023-12-15T18:59:11.174613042Z"
