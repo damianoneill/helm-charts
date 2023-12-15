@@ -2,7 +2,7 @@ apiVersion: v2
 name: base
 description: A Helm chart for Kubernetes
 maintainers:
-  - name: Damian O'Neill
+  - name: damianoneill
 
 type: application
 
