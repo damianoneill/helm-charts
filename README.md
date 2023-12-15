@@ -11,3 +11,9 @@ This repository hosts Damian O'Neill's [Helm](https://helm.sh) charts.
 helm repo add damianoneill https://damianoneill.github.io/helm-charts
 helm repo update
 ```
+
+## Get a list of available charts
+
+```bash
+helm search repo damianoneill
+```
