@@ -3,6 +3,18 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-12-15T23:57:35.117779281Z"
+    description: A subchart for REST based Microservices
+    digest: 61ddec158d3ce775c367ec8a8ac0e5462f44d1dbd6aa880f5fe576063694082d
+    maintainers:
+    - name: damianoneill
+    name: base
+    type: application
+    urls:
+    - https://github.com/damianoneill/helm-charts/releases/download/base-0.1.3/base-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-12-15T23:18:02.735067952Z"
     description: A Helm chart for Kubernetes
     digest: 6422bc68709cbd1451442aaa4c33b2abf3b322408f6a5108fa95f7e2c34cb3c3
@@ -36,4 +48,4 @@ entries:
     urls:
     - https://github.com/damianoneill/helm-charts/releases/download/helloworld-0.1.0/helloworld-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-15T23:18:02.735101354Z"
+generated: "2023-12-15T23:57:35.11780021Z"
