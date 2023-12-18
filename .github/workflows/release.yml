@@ -17,6 +17,12 @@ jobs:
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+      - name: Add helm repo damianoneill
+        run: |
+          helm repo add damianoneill https://damianoneill.github.io/helm-charts/
+          helm repo update
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         env:
