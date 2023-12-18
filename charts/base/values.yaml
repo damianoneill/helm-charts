@@ -78,6 +78,18 @@ ingress:
   # -- TLS configuration for Ingress.
   tls: []
 
+livenessProbe:
+  # -- Enable or disable the liveness probe.
+  enabled: false
+  # -- Path for the liveness probe.
+  path: /ready
+
+readinessProbe:
+  # -- Enable or disable the readiness probe.
+  enabled: true
+  # -- Path for the readiness probe.
+  path: /
+
 # -- Resource requests and limits for the pod.
 resources:
   limits:
