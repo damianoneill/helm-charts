@@ -8,7 +8,7 @@ image:
   repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "3.17"
+  tag: "1.25"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -40,10 +40,7 @@ securityContext:
   # nginx user is 101
   runAsUser: 101
   runAsGroup: 101
-  fsGroup: 101
   allowPrivilegeEscalation: false
-  seccompProfile:
-    type: RuntimeDefault
 
 service:
   type: ClusterIP
