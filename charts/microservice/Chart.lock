@@ -1,0 +1,6 @@
+dependencies:
+- name: base
+  repository: https://damianoneill.github.io/helm-charts
+  version: 0.1.6
+digest: sha256:112a9d4eec4a97b1a9e38ebf476b30dec57dcf4f4b578237fecabdf3dd4e97fe
+generated: "2023-12-18T13:51:07.22578Z"
