@@ -9,7 +9,18 @@ metadata:
 spec:
   containers:
     - name: wget
-      image: busybox
+      image: busybox:1.36.1
       command: ['wget']
-      args: ['{{ include "base.fullname" . }}:{{ .Values.service.port }}']
+      args: ['--spider','{{ include "base.fullname" . }}:{{ .Values.service.port }}']
+      securityContext:
+        runAsUser: 65534
+        runAsGroup: 65534
+        readOnlyRootFilesystem: true
+      resources:
+        limits:
+          cpu: 10m
+          memory: 32Mi
+        requests:
+          cpu: 10m
+          memory: 32Mi
   restartPolicy: Never
