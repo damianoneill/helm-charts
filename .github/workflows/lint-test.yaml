@@ -33,7 +33,7 @@ jobs:
           fi
       - name: Run chart-testing (lint)
         if: steps.list-changed.outputs.changed == 'true'
-        run: ct lint --target-branch ${{ github.event.repository.default_branch }} --print-config --debug
+        run: ct lint --target-branch ${{ github.event.repository.default_branch }}
       - name: "Create Single Cluster"
         uses: AbsaOSS/k3d-action@v2.4.0
         with:

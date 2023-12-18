@@ -1,0 +1,3 @@
+# ignore the *.tgz and lock files generated in all charts directories using subcharts
+charts/*/charts/*.tgz
+charts/*/*.lock
