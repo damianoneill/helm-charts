@@ -9,7 +9,12 @@ metadata:
 spec:
   containers:
     - name: wget
-      image: busybox
+      image: busybox:1.36.1
       command: ['wget']
       args: ['{{ include "base.fullname" . }}:{{ .Values.service.port }}']
+  securityContext:
+    {% comment %} run as nobody {% endcomment %}
+    runAsUser: 65534
+    runAsGroup: 65534
+    fsGroup: 65534
   restartPolicy: Never
