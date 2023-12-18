@@ -1,6 +1,6 @@
 # base
 
-![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 0.1.8](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A subchart for REST based Microservices
 
@@ -21,8 +21,8 @@ A subchart for REST based Microservices
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage. |
 | autoscaling.targetMemoryUtilizationPercentage | int | `80` | Target memory utilization percentage. |
 | fullnameOverride | string | `""` |  |
-| image | object | `{"pullPolicy":"IfNotPresent","repository":"nginxinc/nginx-unprivileged","tag":"alpine3.18"}` | Docker image details. |
-| image.pullPolicy | string | `"IfNotPresent"` | Image pull policy. |
+| image | object | `{"pullPolicy":"Always","repository":"nginxinc/nginx-unprivileged","tag":"alpine3.18"}` | Docker image details. |
+| image.pullPolicy | string | `"Always"` | Image pull policy. |
 | image.repository | string | `"nginxinc/nginx-unprivileged"` | Docker image repository. |
 | image.tag | string | `"alpine3.18"` | Image tag. |
 | imagePullSecrets | list | `[]` | Secrets for pulling images from private repositories. |

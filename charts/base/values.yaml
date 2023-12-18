@@ -6,7 +6,7 @@ image:
   # -- Docker image repository.
   repository: nginxinc/nginx-unprivileged
   # -- Image pull policy.
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # -- Image tag.
   tag: "alpine3.18"
 
