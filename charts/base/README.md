@@ -1,6 +1,6 @@
 # base
 
-![Version: 0.1.8](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A subchart for REST based Microservices
 
@@ -32,11 +32,15 @@ A subchart for REST based Microservices
 | ingress.enabled | bool | `false` | Enable or disable Ingress. |
 | ingress.hosts | list | `[{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}]` | Ingress hosts and paths. |
 | ingress.tls | list | `[]` | TLS configuration for Ingress. |
+| livenessProbe.enabled | bool | `false` | Enable or disable the liveness probe. |
+| livenessProbe.path | string | `"/ready"` | Path for the liveness probe. |
 | nameOverride | string | `""` | Overrides for chart and deployment names. |
 | nodeSelector | object | `{}` | Node selector for the pod. |
 | podAnnotations | object | `{}` | Annotations for pods. |
 | podLabels | object | `{}` | Labels for pods. |
 | podSecurityContext | object | `{}` | Security context for the entire pod. |
+| readinessProbe.enabled | bool | `true` | Enable or disable the readiness probe. |
+| readinessProbe.path | string | `"/"` | Path for the readiness probe. |
 | replicaCount | int | `1` | Number of replicas for the deployment. |
 | resources | object | `{"limits":{"cpu":"100m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Resource requests and limits for the pod. |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":true,"runAsGroup":101,"runAsNonRoot":true,"runAsUser":101}` | Security context for containers. |
