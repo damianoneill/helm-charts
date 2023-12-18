@@ -38,7 +38,7 @@ jobs:
           if [[ -n "$changed" ]]; then
             helm repo add bitnami https://charts.bitnami.com/bitnami
             helm repo update
-            helm install --set args={--kubelet-insecure-tls} metrics-server bitnami/metrics-server --namespace kube-system
+            helm install --set args={--kubelet-insecure-tls} --set apiService.create=true metrics-server bitnami/metrics-server --namespace kube-system
           fi
       - name: Run chart-testing (install)
         if: steps.list-changed.outputs.changed == 'true'
