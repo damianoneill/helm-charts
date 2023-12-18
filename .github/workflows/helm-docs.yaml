@@ -3,13 +3,15 @@ on:
   - pull_request
 jobs:
   generate:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Run helm-docs
-      uses: losisin/helm-docs-github-action@v1.1.1
+      uses: losisin/helm-docs-github-action@v1.1.2
       with:
         git-push: true
         chart-search-root: ./charts
