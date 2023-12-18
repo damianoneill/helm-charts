@@ -3,6 +3,18 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-12-18T18:04:46.333951643Z"
+    description: A subchart for REST based Microservices
+    digest: 0e4e24643ff3b7e6a5768882adcd0f4fde10b19c6b3f0e7d5d8206626960401b
+    maintainers:
+    - name: damianoneill
+    name: base
+    type: application
+    urls:
+    - https://github.com/damianoneill/helm-charts/releases/download/base-0.1.7/base-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-12-18T13:35:13.927824634Z"
     description: A subchart for REST based Microservices
     digest: f0416a0c2e70104065d9fb1f8ffb4a8dbfb14c828ddc0fd29c34fc2d7cb6fd06
@@ -84,4 +96,21 @@ entries:
     urls:
     - https://github.com/damianoneill/helm-charts/releases/download/helloworld-0.1.0/helloworld-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-18T13:35:13.927851765Z"
+  microservice:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-12-18T18:04:46.482054722Z"
+    dependencies:
+    - name: base
+      repository: '@damianoneill'
+      version: 0.1.6
+    description: Sample REST based Microservice, using damianoneill/base chart
+    digest: bb50621f8f1f86d1885e1b35e26ded14358e3cf1abe91a6d3bbd2ad89c5c9672
+    maintainers:
+    - name: damianoneill
+    name: microservice
+    type: application
+    urls:
+    - https://github.com/damianoneill/helm-charts/releases/download/microservice-0.1.4/microservice-0.1.4.tgz
+    version: 0.1.4
+generated: "2023-12-18T18:04:46.482082975Z"
