@@ -16,6 +16,10 @@ jobs:
         with:
           python-version: "3.10"
           check-latest: true
+      - name: Add helm repo damianoneill
+        run: |
+          helm repo add damianoneill https://damianoneill.github.io/helm-charts/
+          helm repo update
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.6.1
       - name: Run chart-testing (list-changed)
