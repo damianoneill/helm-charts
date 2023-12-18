@@ -3,6 +3,18 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-12-18T19:37:33.379355735Z"
+    description: A subchart for REST based Microservices
+    digest: 7a664da3a026eb4d949a954c7ad4c39d420fe5cce65141c548f57ff0a0e66858
+    maintainers:
+    - name: damianoneill
+    name: base
+    type: application
+    urls:
+    - https://github.com/damianoneill/helm-charts/releases/download/base-0.1.8/base-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-12-18T18:04:46.333951643Z"
     description: A subchart for REST based Microservices
     digest: 0e4e24643ff3b7e6a5768882adcd0f4fde10b19c6b3f0e7d5d8206626960401b
@@ -113,4 +125,4 @@ entries:
     urls:
     - https://github.com/damianoneill/helm-charts/releases/download/microservice-0.1.4/microservice-0.1.4.tgz
     version: 0.1.4
-generated: "2023-12-18T18:04:46.482082975Z"
+generated: "2023-12-18T19:37:33.379390931Z"
