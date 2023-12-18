@@ -1,6 +1,5 @@
 # Chart Repository
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/damianoneill/helm-charts?style=for-the-badge)](https://github.com/damianoneill/helm-charts/releases/latest)
 [![License](https://img.shields.io/github/license/damianoneill/helm-charts?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 This repository hosts Damian O'Neill's [Helm](https://helm.sh) charts.
