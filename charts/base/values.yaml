@@ -1,68 +1,84 @@
-# Default values for base.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
+# -- Number of replicas for the deployment.
 replicaCount: 1
 
+# -- Docker image details.
 image:
+  # -- Docker image repository.
   repository: nginxinc/nginx-unprivileged
+  # -- Image pull policy.
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # -- Image tag.
   tag: "alpine3.18"
 
-
+# -- Secrets for pulling images from private repositories.
 imagePullSecrets: []
+
+# -- Overrides for chart and deployment names.
 nameOverride: ""
 fullnameOverride: ""
 
+# -- Configuration for the service account.
 serviceAccount:
-  # Specifies whether a service account should be created
+  # -- Whether to create a service account.
   create: true
-  # Automatically mount a ServiceAccount's API credentials?
+  # -- Automatically mount API credentials for the service account.
   automount: true
-  # Annotations to add to the service account
+  # -- Annotations for the service account.
   annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
+  # -- Name of the service account to use.
   name: ""
 
+# -- Annotations for pods.
 podAnnotations: {}
+
+# -- Labels for pods.
 podLabels: {}
 
+# -- Security context for the entire pod.
 podSecurityContext: {}
-  # fsGroup: 2000
 
+# -- Security context for containers.
 securityContext:
+  # -- Drop capabilities for the container.
   capabilities:
     drop:
     - ALL
+  # -- Mount the root filesystem as read-only.
   readOnlyRootFilesystem: true
+  # -- Run the container as a non-root user.
   runAsNonRoot: true
-  # nginx user is 101
+  # -- User ID for the container (nginx user is 101).
   runAsUser: 101
+  # -- Group ID for the container (nginx group is 101).
   runAsGroup: 101
+  # -- Disallow privilege escalation.
   allowPrivilegeEscalation: false
 
+# -- Configuration for the Kubernetes service.
 service:
+  # -- Service type (e.g., ClusterIP).
   type: ClusterIP
+  # -- Service port.
   port: 8080
 
+# -- Configuration for Ingress resources.
 ingress:
+  # -- Enable or disable Ingress.
   enabled: false
+  # -- Ingress class.
   className: ""
+  # -- Annotations for Ingress.
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  # -- Ingress hosts and paths.
   hosts:
     - host: chart-example.local
       paths:
         - path: /
           pathType: ImplementationSpecific
+  # -- TLS configuration for Ingress.
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
 
+# -- Resource requests and limits for the pod.
 resources:
   limits:
     cpu: 100m
@@ -71,14 +87,19 @@ resources:
     cpu: 100m
     memory: 128Mi
 
+# -- Autoscaling configuration.
 autoscaling:
+  # -- Enable or disable autoscaling.
   enabled: true
+  # -- Minimum and maximum replicas.
   minReplicas: 1
   maxReplicas: 5
+  # -- Target CPU utilization percentage.
   targetCPUUtilizationPercentage: 80
+  # -- Target memory utilization percentage.
   targetMemoryUtilizationPercentage: 80
 
-# Additional volumes on the output Deployment definition.
+# -- Additional volumes for the Deployment.
 volumes:
   - name: nginx-config
     emptyDir: {}
@@ -87,7 +108,7 @@ volumes:
   - name: tmp
     emptyDir: {}
 
-# Additional volumeMounts on the output Deployment definition.
+# -- Additional volume mounts for the Deployment.
 volumeMounts:
   - name: nginx-config
     mountPath: /home/nginx
@@ -96,8 +117,11 @@ volumeMounts:
   - name: tmp
     mountPath: /tmp
 
+# -- Node selector for the pod.
 nodeSelector: {}
 
+# -- Tolerations for the pod.
 tolerations: []
 
+# -- Affinity rules for the pod.
 affinity: {}
