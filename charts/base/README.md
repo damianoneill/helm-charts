@@ -21,8 +21,8 @@ A subchart for REST based Microservices
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage. |
 | autoscaling.targetMemoryUtilizationPercentage | int | `80` | Target memory utilization percentage. |
 | fullnameOverride | string | `""` |  |
-| image | object | `{"pullPolicy":"IfNotPresent","repository":"nginxinc/nginx-unprivileged","tag":"alpine3.18"}` | Docker image details. |
-| image.pullPolicy | string | `"IfNotPresent"` | Image pull policy. |
+| image | object | `{"pullPolicy":"Always","repository":"nginxinc/nginx-unprivileged","tag":"alpine3.18"}` | Docker image details. |
+| image.pullPolicy | string | `"Always"` | Image pull policy. |
 | image.repository | string | `"nginxinc/nginx-unprivileged"` | Docker image repository. |
 | image.tag | string | `"alpine3.18"` | Image tag. |
 | imagePullSecrets | list | `[]` | Secrets for pulling images from private repositories. |
