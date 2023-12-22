@@ -146,3 +146,8 @@ tolerations: []
 
 # -- Affinity rules for the pod.
 affinity: {}
+
+# -- ConfigMaps to mount into the pod.
+configMaps: {}
+  # - name: base-configmap
+  # - name: some-other-configmap
