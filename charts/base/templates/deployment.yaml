@@ -52,6 +52,13 @@ spec:
           startupProbe:
             {{- toYaml .Values.startupProbe | nindent 12 }}
           {{- end }}
+          {{- if .Values.configMaps }}
+          envFrom:
+            {{- range .Values.configMaps }}
+            - configMapRef:
+                name: {{ .name }}
+            {{- end }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
