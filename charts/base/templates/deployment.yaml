@@ -36,22 +36,16 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.ports }}
           ports:
-            - name: http
-              containerPort: {{ .Values.service.port }}
-              protocol: TCP
-          {{- if .Values.livenessProbe.enabled }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           livenessProbe:
-            httpGet:
-              path: {{ .Values.livenessProbe.path }}
-              port: http
-          {{- end }}
-          {{- if .Values.readinessProbe.enabled }}
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
-            httpGet:
-              path: {{ .Values.readinessProbe.path }}
-              port: http
-          {{- end }}
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          startupProbe:
+            {{- toYaml .Values.startupProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
