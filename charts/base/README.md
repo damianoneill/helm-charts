@@ -40,9 +40,9 @@ A subchart for REST based Microservices
 | podSecurityContext | object | `{}` | Security context for the entire pod. |
 | ports | list | `[{"containerPort":8080,"name":"http","protocol":"TCP"}]` | List of ports to expose on the pod. |
 | ports[0] | object | `{"containerPort":8080,"name":"http","protocol":"TCP"}` | Port for the HTTP server, likely same as service port defined above. |
-| readinessProbe | object | `{"path":"/","port":"http"}` | Readiness probe configuration. |
-| readinessProbe.path | string | `"/"` | Path for the readiness probe. |
-| readinessProbe.port | string | `"http"` | Port for the readiness probe. |
+| readinessProbe | object | `{"httpGet":{"path":"/","port":"http"}}` | Readiness probe configuration. |
+| readinessProbe.httpGet.path | string | `"/"` | Path for the readiness probe. |
+| readinessProbe.httpGet.port | string | `"http"` | Port for the readiness probe. |
 | replicaCount | int | `1` | Number of replicas for the deployment. |
 | resources | object | `{"limits":{"cpu":"100m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Resource requests and limits for the pod. |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":true,"runAsGroup":101,"runAsNonRoot":true,"runAsUser":101}` | Security context for containers. |
