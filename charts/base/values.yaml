@@ -90,10 +90,11 @@ livenessProbe: {}
 
 # -- Readiness probe configuration.
 readinessProbe:
-  # -- Path for the readiness probe.
-  path: /
-  # -- Port for the readiness probe.
-  port: http
+  httpGet:
+    # -- Path for the readiness probe.
+    path: /
+    # -- Port for the readiness probe.
+    port: http
 
 # -- Startup probe configuration.
 startupProbe: {}
