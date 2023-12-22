@@ -78,17 +78,26 @@ ingress:
   # -- TLS configuration for Ingress.
   tls: []
 
-livenessProbe:
-  # -- Enable or disable the liveness probe.
-  enabled: false
-  # -- Path for the liveness probe.
-  path: /ready
+# -- List of ports to expose on the pod.
+ports:
+  # -- Port for the HTTP server, likely same as service port defined above.
+  - name: http
+    containerPort: 8080
+    protocol: TCP
 
+# -- Liveness probe configuration.
+livenessProbe: {}
+
+# -- Readiness probe configuration.
 readinessProbe:
-  # -- Enable or disable the readiness probe.
-  enabled: true
-  # -- Path for the readiness probe.
-  path: /
+  httpGet:
+    # -- Path for the readiness probe.
+    path: /
+    # -- Port for the readiness probe.
+    port: http
+
+# -- Startup probe configuration.
+startupProbe: {}
 
 # -- Resource requests and limits for the pod.
 resources:
