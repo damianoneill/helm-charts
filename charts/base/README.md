@@ -1,6 +1,6 @@
 # base
 
-![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 0.1.10](https://img.shields.io/badge/Version-0.1.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A subchart for REST based Microservices
 
@@ -32,15 +32,17 @@ A subchart for REST based Microservices
 | ingress.enabled | bool | `false` | Enable or disable Ingress. |
 | ingress.hosts | list | `[{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}]` | Ingress hosts and paths. |
 | ingress.tls | list | `[]` | TLS configuration for Ingress. |
-| livenessProbe.enabled | bool | `false` | Enable or disable the liveness probe. |
-| livenessProbe.path | string | `"/ready"` | Path for the liveness probe. |
+| livenessProbe | object | `{}` | Liveness probe configuration. |
 | nameOverride | string | `""` | Overrides for chart and deployment names. |
 | nodeSelector | object | `{}` | Node selector for the pod. |
 | podAnnotations | object | `{}` | Annotations for pods. |
 | podLabels | object | `{}` | Labels for pods. |
 | podSecurityContext | object | `{}` | Security context for the entire pod. |
-| readinessProbe.enabled | bool | `true` | Enable or disable the readiness probe. |
+| ports | list | `[{"containerPort":8080,"name":"http","protocol":"TCP"}]` | List of ports to expose on the pod. |
+| ports[0] | object | `{"containerPort":8080,"name":"http","protocol":"TCP"}` | Port for the HTTP server, likely same as service port defined above. |
+| readinessProbe | object | `{"path":"/","port":"http"}` | Readiness probe configuration. |
 | readinessProbe.path | string | `"/"` | Path for the readiness probe. |
+| readinessProbe.port | string | `"http"` | Port for the readiness probe. |
 | replicaCount | int | `1` | Number of replicas for the deployment. |
 | resources | object | `{"limits":{"cpu":"100m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Resource requests and limits for the pod. |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":true,"runAsGroup":101,"runAsNonRoot":true,"runAsUser":101}` | Security context for containers. |
@@ -58,6 +60,7 @@ A subchart for REST based Microservices
 | serviceAccount.automount | bool | `true` | Automatically mount API credentials for the service account. |
 | serviceAccount.create | bool | `true` | Whether to create a service account. |
 | serviceAccount.name | string | `""` | Name of the service account to use. |
+| startupProbe | object | `{}` | Startup probe configuration. |
 | tolerations | list | `[]` | Tolerations for the pod. |
 | volumeMounts | list | `[{"mountPath":"/home/nginx","name":"nginx-config"},{"mountPath":"/var/cache/nginx","name":"nginx-cache"},{"mountPath":"/tmp","name":"tmp"}]` | Additional volume mounts for the Deployment. |
 | volumes | list | `[{"emptyDir":{},"name":"nginx-config"},{"emptyDir":{},"name":"nginx-cache"},{"emptyDir":{},"name":"tmp"}]` | Additional volumes for the Deployment. |
