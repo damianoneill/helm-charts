@@ -20,7 +20,7 @@ Sample REST based Microservice, using damianoneill/base chart
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| base.configMaps | list | `[{"name":"microservice-configmap"}]` | Service specific environment variables. |
+| base.configMaps | list | `[{"name":"templates/microservice-configmap"}]` | Service specific environment variables. |
 | base.image | object | `{"pullPolicy":"Always","repository":"nginxinc/nginx-unprivileged","tag":"alpine3.17"}` | Docker image details. |
 | base.image.pullPolicy | string | `"Always"` | Image pull policy. |
 | base.image.repository | string | `"nginxinc/nginx-unprivileged"` | Docker image repository. |
