@@ -8,6 +8,16 @@ base:
     # -- Docker image repository.
     repository: nginxinc/nginx-unprivileged
     # -- Image pull policy.
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     # -- Image tag.
     tag: "alpine3.17"
+  # -- Enable a startup probe.
+  startupProbe:
+    httpGet:
+      path: /
+      port: http
+    failureThreshold: 30
+    periodSeconds: 10
+  # -- Service specific environment variables.
+  configMaps:
+    - name: microservice-configmap

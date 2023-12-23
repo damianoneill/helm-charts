@@ -1,0 +1,8 @@
+# templates/microservice.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  DB_HOST: "dummy-value"  # default or placeholder value
