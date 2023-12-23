@@ -20,4 +20,4 @@ base:
     periodSeconds: 10
   # -- Service specific environment variables.
   configMaps:
-    - name: microservice-configmap
+    - name: templates/microservice-configmap
