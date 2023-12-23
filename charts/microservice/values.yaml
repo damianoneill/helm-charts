@@ -16,8 +16,8 @@ base:
     httpGet:
       path: /
       port: http
-      failureThreshold: 30
-      periodSeconds: 10
+    failureThreshold: 30
+    periodSeconds: 10
   # -- Service specific environment variables.
   configMaps:
     - name: microservice-configmap
